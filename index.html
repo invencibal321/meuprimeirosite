@@ -1,5 +1,4 @@
-<
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -74,4 +73,244 @@
                         url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=1200') center/cover;
             height: 60vh;
             display: flex;
-            flex-direction: column
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+            max-width: 800px;
+            line-height: 1.1;
+        }
+
+        .btn-destaque {
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 14px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+        }
+
+        .btn-destaque:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+        }
+
+        /* --- Main Layout --- */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Coluna de notícias e sidebar */
+            gap: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        /* --- News Grid --- */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .card-img-wrapper {
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover img { transform: scale(1.1); }
+
+        .card-content { padding: 20px; }
+
+        .category {
+            background: #fef9c3;
+            color: #854d0e;
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .card h3 {
+            margin: 12px 0;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        /* --- Sidebar (Resultados) --- */
+        .sidebar-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .match-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #edf2f7;
+            font-size: 0.9rem;
+        }
+
+        .match-row b { color: var(--primary); }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark);
+            color: var(--gray);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 992px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; } /* Pode ser substituído por menu hamburguer via JS */
+            .hero h2 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Esporte<span>Total</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Futebol</a></li>
+                <li><a href="#">NBA</a></li>
+                <li><a href="#">F1</a></li>
+                <li><a href="#">eSports</a></li>
+                <li><a href="#">Olimpíadas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Onde a paixão encontra a notícia</h2>
+        <p>Acompanhe análises exclusivas e resultados em tempo real.</p>
+        <br>
+        <a href="#noticias" class="btn-destaque">LER ÚLTIMAS NOTÍCIAS</a>
+    </section>
+
+    <div class="main-wrapper" id="noticias">
+        <main>
+            <h2 class="section-title">Destaques da Semana</h2>
+            <div class="news-grid">
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=60&w=500" alt="Futebol">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">FUTEBOL</span>
+                        <h3>Final da Champions: O guia completo do jogão</h3>
+                        <p>Tudo o que você precisa saber sobre as escalações e o histórico do confronto.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=60&w=500" alt="Basquete">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">BASQUETE</span>
+                        <h3>Playoffs NBA: Astros decidem vaga no jogo 7</h3>
+                        <p>A tensão toma conta da liga com as semifinais pegando fogo neste domingo.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526676023131-d352423b0360?auto=format&fit=crop&q=60&w=500" alt="F1">
+                    </div>
+                    <div class="card-content">
+                        <span class="category">MOTOR</span>
+                        <h3>Verstappen domina treinos livres em Interlagos</h3>
+                        <p>O holandês voador mostra porque é o favorito para a pole position no Brasil.</p>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h2 class="section-title">Placares</h2>
+            <div class="sidebar-box">
+                <div class="match-row">
+                    <span>BRA 2 x 1 ARG</span>
+                    <b>Finalizado</b>
+                </div>
+                <div class="match-row">
+                    <span>LAL 102 x 98 GSW</span>
+                    <b>4º Quarto</b>
+                </div>
+                <div class="match-row">
+                    <span>RMA 0 x 0 BAR</span>
+                    <b>20:00</b>
+                </div>
+                <div class="match-row">
+                    <span>FRA 3 x 0 ITA</span>
+                    <b>Finalizado</b>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Esporte Total Portal. Todos os direitos reservados.</p>
+        <small>As melhores coberturas esportivas em um só lugar.</small>
+    </footer>
+
+</body>
+</html>
