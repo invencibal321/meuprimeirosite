@@ -1,18 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
+<
+    <!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meu primeiro site 52</title>
+    <title>Portal Esporte Total</title>
+    <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            color: #ffcc00;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?auto=format&fit=crop&q=80&w=1200') center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-destaque {
+            background-color: #ffcc00;
+            color: #1a1a1a;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        /* Seção de Notícias */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            border-left: 5px solid #ffcc00;
+            padding-left: 10px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .category {
+            font-size: 0.8rem;
+            color: #ffcc00;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav { display: none; } /* Simplicidade para o exemplo */
+            .hero h2 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-  
-    
-Hellou wors!!!!!
 
+    <header>
+        <div class="logo">
+            <h1>Esporte<span>Total</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Futebol</a></li>
+                <li><a href="#">Basquete</a></li>
+                <li><a href="#">Vôlei</a></li>
+                <li><a href="#">Lutas</a></li>
+                <li><a href="#">eSports</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section class="hero">
+        <h2>A emoção do esporte em tempo real</h2>
+        <p>Acompanhe os resultados, análises e as últimas notícias do mundo olímpico e profissional.</p>
+        <a href="#" class="btn-destaque">VER PLACARES</a>
+    </section>
 
+    <main class="container">
+        <h2 class="section-title">Últimas Notícias</h2>
+        
+        <div class="news-grid">
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=60&w=500" alt="Futebol">
+                <div class="card-content">
+                    <span class="category">Futebol</span>
+                    <h3>Final da Champions: O que esperar do confronto decisivo</h3>
+                    <p>Especialistas analisam as táticas que podem definir o campeão europeu deste ano.</p>
+                </div>
+            </article>
 
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&q=60&w=500" alt="Basquete">
+                <div class="card-content">
+                    <span class="category">Basquete</span>
+                    <h3>Draft da NBA: As novas promessas que estão chegando</h3>
+                    <p>Confira quem são os jovens talentos cotados para as primeiras escolhas.</p>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1526676023131-d352423b0360?auto=format&fit=crop&q=60&w=500" alt="Fórmula 1">
+                <div class="card-content">
+                    <span class="category">Automobilismo</span>
+                    <h3>GP de Interlagos: Ingressos começam a ser vendidos</h3>
+                    <p>Saiba como garantir seu lugar na corrida mais aguardada do calendário brasileiro.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Esporte Total - Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
